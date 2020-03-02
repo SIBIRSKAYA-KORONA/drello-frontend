@@ -159,6 +159,25 @@ textarea {
     align-content: flex-end;
 }
 
+.header-block {
+    max-height: 50px;
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+}
+
+.header-block-align-start {
+    justify-content: flex-start;
+}
+
+.header-block-align-center {
+    justify-content: center;
+}
+
+.header-block-align-end {
+    justify-content: flex-end;
+}
+
 .container-width-1200 {
     width: 100%;
     max-width: 1200px;
@@ -520,3 +539,12 @@ textarea {
 }
 
 /*      END PROFILE     */
+
+/*       MAIN HEADER        */
+
+.header-logo {
+    width: 200px;
+    max-height: 100%;
+}
+
+/*      END MAIN HEADER     */
