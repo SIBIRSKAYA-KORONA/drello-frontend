@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const address = require('ip').address;
 
 // INIT HTTPS SERVER
 const publicFolder = path.resolve(__dirname, '..', 'public');
@@ -22,8 +23,8 @@ appHttps.get('*', (req, res) => {
 
 
 const httpsServer = https.createServer({
-    key: fs.readFileSync('server/credentials/prod.key'),
-    cert: fs.readFileSync('server/credentials/prod.crt'),
+    key: fs.readFileSync('server/credentials/test.key'),
+    cert: fs.readFileSync('server/credentials/test.crt'),
 }, appHttps);
 httpsServer.listen(443, () => console.log(`HTTPS server started`));
 
@@ -37,4 +38,7 @@ appHttp.get('*', function(req, res) {
 });
 
 const httpServer = http.createServer(appHttp);
-httpServer.listen(80, () => console.log(`HTTP server started`));
+httpServer.listen(80, () => {
+    console.log(`http://${address()}`);
+    console.log(`HTTP server started`);
+});

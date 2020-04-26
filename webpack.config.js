@@ -22,6 +22,7 @@ module.exports = {
 
     devServer: isDev ? {
         port: 5555,
+        host: '0.0.0.0',
         https: true,
         key: fs.readFileSync(path.resolve(__dirname, 'server/credentials/test.key')),
         cert: fs.readFileSync(path.resolve(__dirname, 'server/credentials/test.crt')),

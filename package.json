@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=development webpack-dev-server --open",
-    "prod": "webpack && node server/server.js",
+    "prod": "webpack && sudo node server/server.js",
     "lint": "eslint --fix . && echo '  LINT OK'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
